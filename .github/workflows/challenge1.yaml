@@ -28,7 +28,7 @@ jobs:
          run: pip install pandas
 
        - name: create artefact
-        run: |
+         run: |
           echo "# This is my python artifact" > artifact.py
           python artifact.py
 
