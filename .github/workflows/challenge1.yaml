@@ -12,3 +12,28 @@ jobs:
           date
           pwd
           ls -la
+   job2:
+     name: artifact and  setup python
+     runs-on: ubuntu-latest
+     steps:
+       - name: setup python
+         uses: actions/setup-python@v4
+         with:
+          python-version: '3.10'
+
+       - name: check python version
+         run: python --version
+
+       - name: set up pandas
+         run: pip install pandas
+
+       - name: create artefact
+        run: |
+          echo "# This is my python artifact" > artifact.py
+          python artifact.py
+
+       - name: upload artifact
+         uses: actions/upload-artifact@v4
+         with:
+           name: python-artifact
+           path: artifact.py
