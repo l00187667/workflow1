@@ -1,0 +1,14 @@
+name: Challange1
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: Environment Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup
+        run: |
+          date
+          pwd
+          ls -la
